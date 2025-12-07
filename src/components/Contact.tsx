@@ -16,28 +16,42 @@ const Contact = () => {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
+    
+    const subject = encodeURIComponent(`New Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\nPhone: ${formData.phone}\n\nMessage:\n${formData.message}`
+    );
+    
+    window.location.href = `mailto:thegozirdave@gmail.com?subject=${subject}&body=${body}`;
+    
     toast({
-      title: "Message Sent!",
-      description: "Thank you for reaching out. We'll get back to you shortly.",
+      title: "Opening Email Client",
+      description: "Your email client will open to send the message.",
     });
     setFormData({ name: "", email: "", phone: "", message: "" });
   };
+
+  const phoneNumber = "+234 901 448 6093";
+  const whatsappLink = `https://wa.me/2349014486093`;
 
   const contactInfo = [
     {
       icon: MapPin,
       label: "Address",
       value: "Lagos, Nigeria",
+      link: null,
     },
     {
       icon: Phone,
-      label: "Phone",
-      value: "+234 XXX XXX XXXX",
+      label: "Phone / WhatsApp",
+      value: phoneNumber,
+      link: whatsappLink,
     },
     {
       icon: Mail,
       label: "Email",
-      value: "info@tgdefoods.com",
+      value: "thegozirdave@gmail.com",
+      link: "mailto:thegozirdave@gmail.com",
     },
   ];
 
@@ -67,7 +81,18 @@ const Contact = () => {
                   </div>
                   <div>
                     <p className="text-sm text-muted-foreground">{item.label}</p>
-                    <p className="text-foreground font-medium">{item.value}</p>
+                    {item.link ? (
+                      <a 
+                        href={item.link} 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className="text-foreground font-medium hover:text-primary transition-colors"
+                      >
+                        {item.value}
+                      </a>
+                    ) : (
+                      <p className="text-foreground font-medium">{item.value}</p>
+                    )}
                   </div>
                 </div>
               ))}

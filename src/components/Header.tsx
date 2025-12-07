@@ -18,7 +18,7 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-card/95 backdrop-blur-sm border-b border-border">
       <div className="container mx-auto px-4 py-3 flex items-center justify-between">
         <a href="#home" className="flex items-center gap-2">
-          <img src={logo} alt="TGDE Foods & Farms" className="h-12 w-auto" />
+             <img src="/logo-light-bg.svg" alt="TGDE Foods & Farms" className="h-12 w-auto" />
         </a>
 
         {/* Desktop Navigation */}

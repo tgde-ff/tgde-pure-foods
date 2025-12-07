@@ -1,5 +1,5 @@
 import { Facebook, Instagram, Twitter, Linkedin } from "lucide-react";
-import logo from "@/assets/tgde-logo.png";
+import logoDark from "@/assets/logo-dark-bg.svg";
 
 const Footer = () => {
   const quickLinks = [
@@ -30,7 +30,7 @@ const Footer = () => {
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
           {/* Brand */}
           <div className="lg:col-span-1">
-            <img src={logo} alt="TGDE Foods & Farms" className="h-16 w-auto mb-4 brightness-0 invert" />
+            <img src={logoDark} alt="TGDE Foods & Farms" className="h-16 w-auto mb-4" />
             <p className="text-background/70 mb-6">
               Pure from nature, pure for you. Nigeria's trusted source of authentic, 
               unadulterated food products.

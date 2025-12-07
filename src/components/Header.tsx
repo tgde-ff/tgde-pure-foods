@@ -1,7 +1,6 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
-import logo from "@/public/logo-light-bg.svg";
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);

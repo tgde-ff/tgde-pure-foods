@@ -3,6 +3,8 @@ import { Badge } from "@/components/ui/badge";
 import { Star, ShoppingCart } from "lucide-react";
 import productFamily from "@/assets/product-family.jpg";
 import productShelf from "@/assets/product-shelf.jpg";
+import pantryStaples from "@/assets/pantry-staples.jpg";
+import grainsSpices from "@/assets/grains-spices.jpg";
 
 const products = [
   {
@@ -21,6 +23,24 @@ const products = [
     image: productShelf,
     sizes: ["5L", "10L", "25L"],
     badge: "Best Value",
+    rating: 5,
+  },
+  {
+    name: "Nigerian Pantry Essentials",
+    tagline: "Complete Kitchen Ingredients",
+    description: "Authentic Nigerian pantry staples including dried fish, crayfish, locust beans, spices, and more. Everything you need for traditional cooking.",
+    image: pantryStaples,
+    sizes: ["Small", "Medium", "Large"],
+    badge: "New",
+    rating: 5,
+  },
+  {
+    name: "Premium Grains & Spices",
+    tagline: "Farm Fresh Goodness",
+    description: "Locally sourced beans, grains, and spices. Hand-selected for quality and freshness. Perfect for soups, stews, and everyday meals.",
+    image: grainsSpices,
+    sizes: ["1kg", "2kg", "5kg"],
+    badge: "Popular",
     rating: 5,
   },
 ];

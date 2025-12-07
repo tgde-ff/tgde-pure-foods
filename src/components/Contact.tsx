@@ -56,42 +56,42 @@ const Contact = () => {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-card">
-      <div className="container mx-auto px-4">
-        <div className="grid lg:grid-cols-2 gap-16 max-w-6xl mx-auto">
+    <section id="contact" className="py-16 sm:py-20 lg:py-24 bg-card">
+      <div className="container mx-auto px-4 sm:px-6">
+        <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 max-w-6xl mx-auto">
           {/* Left - Info */}
           <div>
-            <span className="text-primary font-medium text-sm uppercase tracking-wider">
+            <span className="text-primary font-medium text-xs sm:text-sm uppercase tracking-wider">
               Get in Touch
             </span>
-            <h2 className="font-serif text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-4 mb-6">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mt-3 sm:mt-4 mb-4 sm:mb-6">
               Let's <span className="text-primary">Connect</span>
             </h2>
-            <p className="text-lg text-muted-foreground mb-10">
+            <p className="text-base sm:text-lg text-muted-foreground mb-8 sm:mb-10">
               Have questions about our products? Want to place a bulk order? 
               We'd love to hear from you. Reach out and let's bring purity to your table.
             </p>
 
             {/* Contact Details */}
-            <div className="space-y-6">
+            <div className="space-y-4 sm:space-y-6">
               {contactInfo.map((item, index) => (
-                <div key={index} className="flex items-start gap-4">
-                  <div className="w-12 h-12 bg-primary/10 rounded-xl flex items-center justify-center flex-shrink-0">
-                    <item.icon className="w-6 h-6 text-primary" />
+                <div key={index} className="flex items-start gap-3 sm:gap-4">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-lg sm:rounded-xl flex items-center justify-center flex-shrink-0">
+                    <item.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
                   </div>
                   <div>
-                    <p className="text-sm text-muted-foreground">{item.label}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">{item.label}</p>
                     {item.link ? (
                       <a 
                         href={item.link} 
                         target="_blank" 
                         rel="noopener noreferrer"
-                        className="text-foreground font-medium hover:text-primary transition-colors"
+                        className="text-foreground font-medium hover:text-primary transition-colors text-sm sm:text-base"
                       >
                         {item.value}
                       </a>
                     ) : (
-                      <p className="text-foreground font-medium">{item.value}</p>
+                      <p className="text-foreground font-medium text-sm sm:text-base">{item.value}</p>
                     )}
                   </div>
                 </div>
@@ -99,11 +99,11 @@ const Contact = () => {
             </div>
 
             {/* Wholesale CTA */}
-            <div className="mt-10 p-6 bg-secondary/10 rounded-2xl border border-secondary/20">
-              <h3 className="font-semibold text-foreground mb-2">
+            <div className="mt-8 sm:mt-10 p-4 sm:p-6 bg-secondary/10 rounded-xl sm:rounded-2xl border border-secondary/20">
+              <h3 className="font-semibold text-foreground mb-1 sm:mb-2 text-sm sm:text-base">
                 Wholesale Inquiries?
               </h3>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 We supply to restaurants, supermarkets, and distributors. Contact us for 
                 competitive bulk pricing and partnership opportunities.
               </p>
@@ -111,14 +111,14 @@ const Contact = () => {
           </div>
 
           {/* Right - Form */}
-          <div className="bg-background p-8 rounded-2xl border border-border">
-            <h3 className="font-serif text-2xl font-bold text-foreground mb-6">
+          <div className="bg-background p-5 sm:p-6 lg:p-8 rounded-xl sm:rounded-2xl border border-border">
+            <h3 className="font-serif text-xl sm:text-2xl font-bold text-foreground mb-4 sm:mb-6">
               Send Us a Message
             </h3>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
+            <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-5">
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2 block">
                   Your Name
                 </label>
                 <Input
@@ -127,12 +127,12 @@ const Contact = () => {
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                   required
-                  className="bg-card"
+                  className="bg-card text-sm sm:text-base"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2 block">
                   Email Address
                 </label>
                 <Input
@@ -141,12 +141,12 @@ const Contact = () => {
                   value={formData.email}
                   onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                   required
-                  className="bg-card"
+                  className="bg-card text-sm sm:text-base"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2 block">
                   Phone Number
                 </label>
                 <Input
@@ -154,12 +154,12 @@ const Contact = () => {
                   placeholder="Enter your phone number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="bg-card"
+                  className="bg-card text-sm sm:text-base"
                 />
               </div>
 
               <div>
-                <label className="text-sm font-medium text-foreground mb-2 block">
+                <label className="text-xs sm:text-sm font-medium text-foreground mb-1.5 sm:mb-2 block">
                   Message
                 </label>
                 <Textarea
@@ -168,11 +168,11 @@ const Contact = () => {
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   required
                   rows={4}
-                  className="bg-card resize-none"
+                  className="bg-card resize-none text-sm sm:text-base"
                 />
               </div>
 
-              <Button type="submit" size="lg" className="w-full group">
+              <Button type="submit" size="lg" className="w-full group text-sm sm:text-base">
                 <Send className="w-4 h-4 mr-2 group-hover:translate-x-1 transition-transform" />
                 Send Message
               </Button>
